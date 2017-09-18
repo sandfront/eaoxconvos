@@ -1,2 +1,18 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<h2>Available topics</h2>
+<ul>
+  <% @topics.each do |topic| %>
+    <% if topic.users.include?(current_user) %>
+      <% interest = Interest.where(user: current_user, topic: topic).first %>
+      <%= link_to interest_path(interest), method: :delete, remote: true do %>
+        <li>You are interested in <%= topic.title %></li>
+      <% end %>
+    <% else %>
+      <%= link_to interests_path(topic_id: topic.id), method: :post, remote: true do %>
+        <li><%= topic.title %></li>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
