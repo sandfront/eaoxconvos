@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :tickets, only: [:new, :create, :destroy, :show] do
     resources :comments, only: [:create, :destroy]
   end
+  get 'tickets/:id/take', to: 'tickets#take_ticket', as: "take_ticket"
 end

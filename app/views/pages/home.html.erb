@@ -26,3 +26,12 @@
     </li>
   <% end %>
 </ul>
+
+<h2>Tickets you've taken</h2>
+<ul>
+  <% @taken_tickets.each do |ticket| %>
+    <li>
+      <%= ticket.title %>
+    </li>
+  <% end %>
+</ul>

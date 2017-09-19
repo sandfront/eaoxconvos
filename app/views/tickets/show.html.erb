@@ -16,3 +16,7 @@
 </ul>
 <h3>Write a comment</h3>
 <%= render 'shared/comment-form' %>
+<h3>Take this ticket</h3>
+<%= link_to take_ticket_path(@ticket) do %>
+  <button>Take the ticket</button>
+<% end %>

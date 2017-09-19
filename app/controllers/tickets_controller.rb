@@ -19,6 +19,14 @@ class TicketsController < ApplicationController
     redirect_to root_path
   end
 
+  def take_ticket
+    ticket = Ticket.find(params[:id])
+    ticket.acceptor_id = current_user.id
+    ticket.taken = true
+    ticket.save
+    redirect_to root_path
+  end
+
   private
 
   def ticket_params
