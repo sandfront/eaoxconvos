@@ -4,7 +4,9 @@
 <h2>Available topics</h2>
 <ul>
   <% @open_tickets.each do |ticket| %>
-    <li><%= ticket.title %></li>
+    <%= link_to ticket_path(ticket) do %>
+      <li><%= ticket.title %></li>
+    <% end %>
   <% end %>
 </ul>
 

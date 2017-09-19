@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
-  resources :tickets, only: [:new, :create, :destroy, :show]
-  resources :comments, only: [:create, :destroy]
+  resources :tickets, only: [:new, :create, :destroy, :show] do
+    resources :comments, only: [:create, :destroy]
+  end
 end

@@ -1,0 +1,11 @@
+<%= @ticket.title %>
+<%= @ticket.description %>
+<p>Created by <%= @ticket.user %></p>
+<h2>Comments</h2>
+<ul>
+  <% @ticket.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+<h3>Write a comment</h3>
+<%= render 'shared/comment-form' %>
