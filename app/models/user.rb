@@ -6,8 +6,7 @@ class User < ApplicationRecord
 
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :interests
-  has_many :topics, through: :interests
+  has_many :tickets
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
