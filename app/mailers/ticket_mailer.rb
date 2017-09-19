@@ -1,13 +1,9 @@
 class TicketMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.ticket_mailer.match.subject
-  #
-  def match
+  def match(ticket)
+    @ticket = ticket
     @greeting = "Hi"
-
-    mail to: "to@example.org"
+    @creator = ticket.user
+    @acceptor = User.find(ticket.acceptor_id)
+    mail to: [@creator.email, @acceptor.email], subject: "You've got a match of EA Ox Conversations!"
   end
 end

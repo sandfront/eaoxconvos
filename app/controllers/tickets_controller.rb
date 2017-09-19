@@ -24,6 +24,7 @@ class TicketsController < ApplicationController
     ticket.acceptor_id = current_user.id
     ticket.taken = true
     ticket.save
+    TicketMailer.match(ticket).deliver_now
     redirect_to root_path
   end
 
