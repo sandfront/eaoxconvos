@@ -4,7 +4,14 @@
 <h2>Comments</h2>
 <ul>
   <% @ticket.comments.each do |comment| %>
-    <li><%= comment.content %></li>
+    <li>
+      <% if comment.user == current_user %>
+        <%= comment.content %>
+        <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
+      <% else %>
+        <%= comment.content %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 <h3>Write a comment</h3>
