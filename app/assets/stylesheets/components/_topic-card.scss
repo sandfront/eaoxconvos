@@ -1,0 +1,17 @@
+.topic-card {
+  height: 230px;
+  width: 100%;
+  background-image: linear-gradient(0deg,#0da382,#67e44e);
+  box-shadow: 0 10px 25px 0 rgba(50,94,128,.2);
+  border-radius: 3px;
+  margin: 20px;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#topic-title {
+  margin: 0;
+}

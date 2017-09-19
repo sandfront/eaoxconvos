@@ -1,0 +1,37 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<h2>Available topics</h2>
+<ul>
+  <% @open_tickets.each do |ticket| %>
+    <%= link_to ticket_path(ticket) do %>
+      <li><%= ticket.title %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h2>Create your own ticket</h2>
+<div class="row">
+  <div class="col-xs-13 col-sm-4 col-sm-offset-4">
+    <%= render 'shared/ticket-form' %>
+  </div>
+</div>
+
+<h2>Your tickets</h2>
+<ul>
+  <% @your_tickets.each do |ticket| %>
+    <li>
+      <%= ticket.title %>
+      <%= link_to "x", ticket_path(ticket), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Tickets you've taken</h2>
+<ul>
+  <% @taken_tickets.each do |ticket| %>
+    <li>
+      <%= ticket.title %>
+    </li>
+  <% end %>
+</ul>

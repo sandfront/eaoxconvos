@@ -1,1 +1,40 @@
-// Specific CSS for your home-page
+// HOME1
+#home1 {
+  height: 80vh;
+  background: grey;
+}
+
+#title-container {
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-content {
+  width: 80%;
+}
+
+#hero-container {
+  height: 100%;
+  display: flex;
+  background: #06beb6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+// HOME2
+#home2 {
+  background: #F0F7F8;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#topic-cards {
+}
+
+.topic-card-container {
+  display: flex;
+  justify-content: center;
+}

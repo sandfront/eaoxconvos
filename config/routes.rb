@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   get 'tickets/:id/take', to: 'tickets#take_ticket', as: "take_ticket"
+  get 'demo', to: 'pages#demo'
 end

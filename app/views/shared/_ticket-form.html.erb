@@ -1,5 +1,10 @@
-<%= simple_form_for @ticket do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.submit %>
-<% end %>
+<div class="ticket-form-container">
+  <div class="form-content">
+    <span>What would you like to chat about?</span>
+    <%= simple_form_for @ticket do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.submit %>
+  </div>
+  <% end %>
+</div>
