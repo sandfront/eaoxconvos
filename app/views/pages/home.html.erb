@@ -33,8 +33,8 @@
 
   <h3 class="subtitle">Get in touch with the committee</h3>
   <div class="row" id="topic-cards">
-    <% if @taken_tickets != [] %>
-      <% @taken_tickets.each do |ticket| %>
+    <% if @committee_tickets != [] %>
+      <% @committee_tickets.each do |ticket| %>
         <%= link_to ticket_path(ticket) do %>
           <div class="col-xs-12 col-sm-4 col-md-3 topic-card-container">
           <%= render 'shared/topic-card', ticket: ticket %>

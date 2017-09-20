@@ -1,9 +1,10 @@
 <% owner = (ticket.user == current_user) ? "current_user_topic" : "" %>
 <% taken = ticket.taken == true ? "taken" : "" %>
-<div class="topic-card <%= owner %> <%= taken %>">
+<% permanent = ticket.permanent == true ? "permanent" : "" %>
+<div class="topic-card <%= owner %> <%= taken %> <%= permanent %>">
   <h3 id="topic-title"><%= ticket.title %></h3>
   <div class="topic-user">
-    <% if ticket.user.first_name %>
+    <% if ticket.user.first_name && (ticket.permanent == false) %>
       <span><%= "- #{ticket.user.first_name} #{ticket.user.last_name}" %></span>
     <% end %>
   </div>

@@ -4,8 +4,9 @@ class PagesController < ApplicationController
   def home
     @ticket = Ticket.new
     # @open_tickets = Ticket.where(taken: false).where.not(user: current_user)
-    @open_tickets = Ticket.where(taken: false)
+    @open_tickets = Ticket.where(taken: false).where.not(permanent: true)
     @taken_tickets = Ticket.where(acceptor_id: current_user.id)
+    @committee_tickets = Ticket.where(permanent: true)
   end
 
   def demo

@@ -3,20 +3,22 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1>Topic: <%= @ticket.title %></h1>
       <div class="ticket-description"><%= @ticket.description %></div>
-      <%= render 'shared/comment-form' %>
-      <div class="comments">
-        <% @ticket.comments.each do |comment| %>
-          <div class="single-comment">
-            <% if comment.user == current_user %>
-              <%= comment.content %>
-              <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
-            <% else %>
-              <%= comment.content %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <h5>Sign up and we'll automatically introduce you to the person who submitted the topic!</h5>
+      <% unless @ticket.permanent == true %>
+        <%= render 'shared/comment-form' %>
+        <div class="comments">
+          <% @ticket.comments.each do |comment| %>
+            <div class="single-comment">
+              <% if comment.user == current_user %>
+                <%= comment.content %>
+                <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
+              <% else %>
+                <%= comment.content %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <h5>Sign up and we'll automatically introduce you to the person who submitted the topic!</h5>
+      <% end %>
       <%= link_to take_ticket_path(@ticket) do %>
         <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
       <% end %>

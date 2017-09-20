@@ -22,7 +22,9 @@ class TicketsController < ApplicationController
   def take_ticket
     ticket = Ticket.find(params[:id])
     ticket.acceptor_id = current_user.id
-    ticket.taken = true
+    unless ticket.permanent == true
+      ticket.taken = true
+    end
     ticket.save
     TicketMailer.match(ticket).deliver_now
     redirect_to root_path
