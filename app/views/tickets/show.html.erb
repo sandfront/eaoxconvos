@@ -19,8 +19,10 @@
         </div>
         <h5>Sign up and we'll automatically introduce you to the person who submitted the topic!</h5>
       <% end %>
-      <%= link_to take_ticket_path(@ticket) do %>
-        <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
+      <% unless @ticket.user == current_user %>
+        <%= link_to take_ticket_path(@ticket) do %>
+          <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
+        <% end %>
       <% end %>
     </div>
   </div>

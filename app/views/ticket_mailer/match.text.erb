@@ -2,9 +2,11 @@
 
 It's James here from EA Oxford.
 
-<%= @creator.first_name %> can I introduce you to <%= @acceptor.first_name %>? You both said that you'd be interested in talking about "<%= @ticket.title %>" on EA Ox Convos!
+<%= @creator.first_name %> can I introduce you to <%= @acceptor.first_name %>? <%= @acceptor.first_name %> said that they'd be interested in talking about "<%= @ticket.title %>" with you on EA Ox Convos!
 
-That's awesome. I'll leave it to you from here; maybe you could grab a coffee in town or lunch to chat about the thing?
+That's awesome.
+
+<%= @acceptor.first_name %>, I'll leave it to you from here; maybe you could suggest a time to grab a coffee or lunch to chat about the thing with <%= @creator.first_name %>?
 
 CEA are willing to pay for the coffees, so if you just keep your receipts and email them back to me, I can sort you out.
 
