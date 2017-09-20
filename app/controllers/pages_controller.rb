@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @ticket = Ticket.new
     # @open_tickets = Ticket.where(taken: false).where.not(user: current_user)
     @open_tickets = Ticket.where(taken: false)
-
+    @taken_tickets = Ticket.where(acceptor_id: current_user.id)
   end
 
   def demo

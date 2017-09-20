@@ -25,3 +25,17 @@
     <% end %>
   </div>
 </div>
+
+<div id="home3" class="text-center">
+
+  <h3>Past conversations you've had</h3>
+  <div class="row" id="topic-cards">
+    <% @taken_tickets.each do |ticket| %>
+      <%= link_to ticket_path(ticket) do %>
+        <div class="col-xs-12 col-sm-4 col-md-3 topic-card-container">
+        <%= render 'shared/topic-card', ticket: ticket %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

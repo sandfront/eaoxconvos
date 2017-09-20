@@ -1,4 +1,6 @@
 <%= simple_form_for [@ticket, @comment] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
+  <%= f.input :content, placeholder: "Write a comment...", label: false %>
+  <div class="text-center">
+    <%= f.submit id: "comment-submit", class: "btn btn-success" %>
+  </div>
 <% end %>
