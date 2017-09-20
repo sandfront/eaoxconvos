@@ -7,9 +7,13 @@
   margin: 20px;
   color: white;
   text-align: left;
-  padding: 30px;
-  display: flex;
-  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.topic-user {
+  position: absolute;
+  bottom: 5px;
 }
 
 #topic-title {

@@ -2,11 +2,11 @@
   <div class="form-content">
     <div id="ticket-form-title">What would you like to chat about?</div>
     <%= simple_form_for @ticket do |f| %>
-      <%= f.input :title, label: "Your question", placeholder: "e.g. How does population ethics affect our cause prioritisation judgements?" %>
-      <%= f.input :description, label: "Further description" %>
+      <%= f.input :title, as: :text, label: "Your question", placeholder: "e.g. How does population ethics affect our cause prioritisation judgements?" %>
       <div class="text-center">
         <%= f.submit 'Submit!', class: "btn btn-primary" %>
       </div>
   </div>
   <% end %>
+  <!-- <button class="btn btn-success predef-topic-btn">or select a predefined topic</button> -->
 </div>

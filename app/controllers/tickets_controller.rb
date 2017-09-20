@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
     ticket = Ticket.new(ticket_params)
     ticket.user = current_user
     ticket.save
-    redirect_to root_path
+    redirect_to ticket_path(ticket)
   end
 
   def destroy
