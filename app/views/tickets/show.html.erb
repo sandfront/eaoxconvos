@@ -1,22 +1,28 @@
-<%= @ticket.title %>
-<%= @ticket.description %>
-<p>Created by <%= @ticket.user %></p>
-<h2>Comments</h2>
-<ul>
-  <% @ticket.comments.each do |comment| %>
-    <li>
-      <% if comment.user == current_user %>
-        <%= comment.content %>
-        <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
-      <% else %>
-        <%= comment.content %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Topic: <%= @ticket.title %></h1>
+      <h2>Description: <%= @ticket.description %></h2>
+      <p>Submitted by <%= @ticket.user.first_name %></p>
+      <h2>Comments</h2>
+      <ul>
+        <% @ticket.comments.each do |comment| %>
+          <li>
+            <% if comment.user == current_user %>
+              <%= comment.content %>
+              <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
+            <% else %>
+              <%= comment.content %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <h3>Write a comment</h3>
+      <%= render 'shared/comment-form' %>
+      <%= link_to take_ticket_path(@ticket) do %>
+        <button class="btn btn-primary btn-lg">Sign me up!</button>
       <% end %>
-    </li>
-  <% end %>
-</ul>
-<h3>Write a comment</h3>
-<%= render 'shared/comment-form' %>
-<h3>Take this ticket</h3>
-<%= link_to take_ticket_path(@ticket) do %>
-  <button>Take the ticket</button>
-<% end %>
+    </div>
+  </div>
+</div>
+
