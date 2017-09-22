@@ -13,17 +13,22 @@
           <%= render 'shared/comment-form' %>
         <% end %>
         <div class="comments">
-          <h3>Comments</h3>
-          <% @ticket.comments.each do |comment| %>
-            <div class="single-comment">
-              <% if comment.user == current_user %>
-                <%= comment.content %>
-                <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
-              <% else %>
-                <%= comment.content %>
-              <% end %>
-            </div>
+          <% unless @ticket.comments == [] %>
+            <h3>Comments</h3>
+            <% @ticket.comments.each do |comment| %>
+              <div class="single-comment">
+                <% if comment.user == current_user %>
+                  <%= comment.content %>
+                  <%= link_to "x", ticket_comment_path(@ticket, comment), method: :delete %>
+                <% else %>
+                  <%= comment.content %>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
+        </div>
+        <div class="text-center">
+          <%= link_to "Go back to topics", root_path, class: "btn btn-primary h1" %>
         </div>
       <% end %>
     </div>

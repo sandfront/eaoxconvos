@@ -3,8 +3,12 @@
 * ------------------------------------- */
 
 .alert {
-  display: none;
   margin: 0;
+  // position: absolute;
+  z-index: 2;
+  top: 70px;
+  right: 0;
+  width: 100%;
   text-align: center;
   color: white;
 }

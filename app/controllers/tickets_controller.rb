@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
     ticket = Ticket.new(ticket_params)
     ticket.user = current_user
     ticket.save
-    redirect_to ticket_path(ticket)
+    redirect_to ticket_path(ticket), notice: "You have successfully submitted a topic."
   end
 
   def destroy
@@ -29,7 +29,7 @@ class TicketsController < ApplicationController
     TicketMailer.match(ticket).deliver_now
     TicketMailer.feedback_creator(ticket).deliver_later(wait: 1.week)
     TicketMailer.feedback_acceptor(ticket).deliver_later(wait: 1.week)
-    redirect_to root_path
+    redirect_to root_path, notice: "Great, we've signed you up. Check your email inbox!"
   end
 
   private
