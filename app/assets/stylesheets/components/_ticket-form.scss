@@ -6,6 +6,9 @@
   padding: 60px;
   border-radius: 2px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  @media (min-width: $screen-xs-min) {
+    width: 90%;
+  }
 }
 
 #ticket-form-title {
