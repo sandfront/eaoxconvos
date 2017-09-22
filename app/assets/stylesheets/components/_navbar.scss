@@ -2,6 +2,8 @@
 
 $navbar-height: 70px;
 
+
+
 .navbar-wagon {
   background: transparent;
   transition: all 0.3s ease;
@@ -11,13 +13,21 @@ $navbar-height: 70px;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  position: absolute;
   z-index: 2;
 }
 
 /* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
+.navbar-wagon-brand {
+  img {
+    height: 50px;
+  }
+  .brand-title {
+  color: #555;
+  vertical-align: middle;
+  }
+  &:hover, &:visited {
+    text-decoration: none;
+  }
 }
 
 /* User Avatar */

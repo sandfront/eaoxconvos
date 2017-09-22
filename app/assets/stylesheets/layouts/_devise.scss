@@ -1,0 +1,25 @@
+.oa-facebook {
+  margin: auto;
+  max-width: 290px;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #4868AD;
+  border-radius: 5px;
+  font-weight: bold;
+  a {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &:hover, &:visited {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  i {
+    font-size: 1.5em;
+  }
+  span {
+    vertical-align: top;
+  }
+}

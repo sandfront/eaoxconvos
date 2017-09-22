@@ -1,11 +1,19 @@
 <div class="container" id="show1">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>Topic: <%= @ticket.title %></h1>
-      <div class="ticket-description"><%= @ticket.description %></div>
+      <h3>Topic: <%= @ticket.title %></h3>
+      <% unless @ticket.user == current_user %>
+        <h5>Sign up and we'll email introduce you to the person who submitted the topic!</h5>
+        <%= link_to take_ticket_path(@ticket) do %>
+          <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
+        <% end %>
+      <% end %>
       <% unless @ticket.permanent == true %>
-        <%= render 'shared/comment-form' %>
+        <% if @ticket.user == current_user %>
+          <%= render 'shared/comment-form' %>
+        <% end %>
         <div class="comments">
+          <h3>Comments</h3>
           <% @ticket.comments.each do |comment| %>
             <div class="single-comment">
               <% if comment.user == current_user %>
@@ -17,12 +25,6 @@
             </div>
           <% end %>
         </div>
-        <h5>Sign up and we'll automatically introduce you to the person who submitted the topic!</h5>
-      <% end %>
-      <% unless @ticket.user == current_user %>
-        <%= link_to take_ticket_path(@ticket) do %>
-          <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
-        <% end %>
       <% end %>
     </div>
   </div>

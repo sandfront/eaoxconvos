@@ -11,5 +11,18 @@
 
 #btn-accept {
   padding: 20px;
-  margin-top: 15px;
+  margin: 25px 0px;
+}
+
+.comments {
+  list-style-type: none;
+}
+
+.single-comment {
+  padding: 20px;
+  background: white;
+  border-radius: 3px;
+  min-height: 70px;
+  box-shadow: 1px 1px 4px 0px rgba(106, 107, 107, 0.1);
+  margin-top: 20px;
 }

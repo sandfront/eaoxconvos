@@ -2,10 +2,17 @@
 <% taken = ticket.taken == true ? "taken" : "" %>
 <% permanent = ticket.permanent == true ? "permanent" : "" %>
 <div class="topic-card <%= owner %> <%= taken %> <%= permanent %>">
-  <h3 id="topic-title"><%= ticket.title %></h3>
+  <% if ticket.title.length < 75 %>
+    <h4 id="topic-title"><%= ticket.title %></h4>
+  <% else %>
+    <h4 id="topic-title"><%= "#{ticket.title.first(75)}......" %></h4>
+  <% end %>
   <div class="topic-user">
     <% if ticket.user.first_name && (ticket.permanent == false) %>
       <span><%= "- #{ticket.user.first_name} #{ticket.user.last_name}" %></span>
+      <% if ticket.user.facebook_picture_url %>
+        <%= image_tag ticket.user.facebook_picture_url, class: "avatar card-avatar"%>
+      <% end %>
     <% end %>
   </div>
 </div>
