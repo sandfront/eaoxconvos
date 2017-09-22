@@ -27,6 +27,8 @@ class TicketsController < ApplicationController
     end
     ticket.save
     TicketMailer.match(ticket).deliver_now
+    TicketMailer.feedback_creator(ticket).deliver_later(wait: 1.week)
+    TicketMailer.feedback_acceptor(ticket).deliver_later(wait: 1.week)
     redirect_to root_path
   end
 
