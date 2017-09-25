@@ -1,0 +1,25 @@
+<p>Dear <%= @user.first_name %>,</p>
+
+<p>Here's the roundup of what's been happening at EA Ox Conversations:</p>
+
+<p>Open conversations:</p>
+
+<ul>
+  <% @tickets.each do |t| %>
+  <li><%= t.title %></li>
+  <% end %>
+</ul>
+
+<p>Past conversations:</p>
+
+<ul>
+  <% @past_tickets.each do |t| %>
+  <li><%= t.title %></li>
+  <% end %>
+</ul>
+
+<p>Go check them out at <a href="https://eaox-conversations.herokuapp.com/">https://eaox-conversations.herokuapp.com/</a></p>
+
+<p>Cheers,</p>
+
+EA Oxford

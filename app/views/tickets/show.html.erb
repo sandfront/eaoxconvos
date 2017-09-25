@@ -29,6 +29,9 @@
         </div>
         <div class="text-center">
           <%= link_to "Go back to topics", root_path, class: "btn btn-primary h1" %>
+          <% if @ticket.user == current_user %>
+            <%= link_to "Delete my topic", ticket_path(@ticket), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger h1"  %>
+          <% end %>
         </div>
       <% end %>
     </div>
