@@ -4,7 +4,7 @@
       <h3>Topic: <%= @ticket.title %></h3>
       <% unless @ticket.user == current_user %>
         <h5>Sign up and we'll email introduce you to the person who submitted the topic!</h5>
-        <%= link_to take_ticket_path(@ticket) do %>
+        <%= link_to take_ticket_path(@ticket), data: { confirm: "Confirm sign up?" } do %>
           <button class="btn btn-primary btn-block" id="btn-accept">Sign me up!</button>
         <% end %>
       <% end %>

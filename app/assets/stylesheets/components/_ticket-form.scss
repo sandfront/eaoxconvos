@@ -1,17 +1,11 @@
 .ticket-form-container {
   background: white;
   height: 70%;
-  width: 90%;
+  width: 60%;
   margin: auto;
-  padding: 60px;
+  padding: 30px;
   border-radius: 2px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: $screen-xs-min) {
-  .ticket-form-container {
-    width: 60%;
-  }
 }
 
 #ticket-form-title {
@@ -27,4 +21,13 @@
 
 .predef-topic-btn {
   margin-top: 20px;
+}
+
+@media (max-width: $screen-xs-min) {
+  .ticket-form-container {
+    width: 90%;
+    padding: 20px;
+  }
+  #ticket_title {
+  }
 }

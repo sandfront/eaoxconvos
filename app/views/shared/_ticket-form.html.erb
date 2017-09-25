@@ -4,7 +4,7 @@
     <% if current_user %>
       <div class="form-content">
         <%= simple_form_for @ticket do |f| %>
-          <%= f.input :title, as: :text, label: "Your question", placeholder: "e.g. How does population ethics affect our cause prioritisation judgements?" %>
+          <%= f.input :title, as: :text, label: false, placeholder: "e.g. How does population ethics affect our cause prioritisation judgements?" %>
           <div class="text-center">
             <%= f.submit 'Submit!', class: "btn btn-primary" %>
           </div>
