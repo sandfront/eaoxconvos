@@ -13,21 +13,29 @@
   font-size: 1.2em;
 }
 
+.form-content {
+  font-size: small;
+}
 
 #ticket_title {
   height: 130px;
   max-width: 100%;
+  font-size: small;
 }
 
-.predef-topic-btn {
-  margin-top: 20px;
+#anonymous-sublabel {
+  font-size: small;
+  color: gray;
+  margin-bottom: 15px;
 }
 
 @media (max-width: $screen-xs-min) {
   .ticket-form-container {
     width: 90%;
     padding: 20px;
+    height: 85%;
   }
   #ticket_title {
+    height: 90px;
   }
 }

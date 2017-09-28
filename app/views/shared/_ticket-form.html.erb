@@ -5,6 +5,8 @@
       <div class="form-content">
         <%= simple_form_for @ticket do |f| %>
           <%= f.input :title, as: :text, label: false, placeholder: "e.g. How does population ethics affect our cause prioritisation judgements?" %>
+          <%= f.input :anonymous, label: "Hide my name from the topic card" %>
+          <div id="anonymous-sublabel">Note: we'll still introduce you by name if someone signs up to your topic</div>
           <div class="text-center">
             <%= f.submit 'Submit!', class: "btn btn-primary" %>
           </div>
