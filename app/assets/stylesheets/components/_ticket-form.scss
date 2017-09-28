@@ -13,9 +13,7 @@
   font-size: 1.2em;
 }
 
-.form-content {
-  font-size: small;
-}
+
 
 #ticket_title {
   height: 130px;
@@ -37,5 +35,8 @@
   }
   #ticket_title {
     height: 90px;
+  }
+  .form-content {
+  font-size: small;
   }
 }
