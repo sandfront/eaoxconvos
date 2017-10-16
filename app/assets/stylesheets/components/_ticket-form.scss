@@ -33,6 +33,11 @@
     padding: 20px;
     height: 85%;
   }
+
+  .ticket-form-container, #hero-container {
+    min-height: 400px;
+  }
+
   #ticket_title {
     height: 90px;
   }
