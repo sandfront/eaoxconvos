@@ -1,7 +1,7 @@
 namespace :user do
   desc "Sending out the newsletter to all users"
   task :newsletter_all => :environment do
-    if Time.now.friday? && (Ticket.where(taken: false) != [])
+    if Time.now.friday? && (Ticket.where(taken: false, permanent: false) != [])
       users = User.all
       puts "Enqueuing email to #{users.size} users..."
       users.each do |user|
